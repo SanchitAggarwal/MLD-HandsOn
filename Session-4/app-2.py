@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-	return "Our First <b>  Web APP </b> <br> First Tutorial on building a small App"
+	raise
 
 if __name__ == '__main__':
 	# running app in debug mode

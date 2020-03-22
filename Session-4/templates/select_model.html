@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>House Price Predicition</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body style="background: #FFAA1D;">
+ <div class="login">
+	<h1>Select the Model for Prediction</h1>
+  <form name="myForm" action="{{ url_for('select_model')}}" method="post" onsubmit="">
+        <input type="radio" name="options" id="Model_1" value="Model_1"> Model_1 <br>
+        <input type="radio" name="options" id="Model_2" value="Model_2"> Model_2 <br>
+<p>
+<input type=submit value=Select_Model>
+</p>
+</form>
+
+
+</div>
+</body>
+</html>
