@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>House Price Predicition</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body style="background: #FF6F61;">
+ <div class="login">
+	<h1>House Price Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('prediction')}}"method="post">
+    	    <input type="text" name="Year Built" placeholder="Year Built" required="required" />
+          <input type="text" name="Bedroom Abv Gr" placeholder="Bedroom Abv Gr" required="required" />
+		      <input type="text" name="Kitchen Abv Gr" placeholder="Kitchen Abv Gr" required="required" />
+          <button type="submit" class="btn btn-primary btn-block btn-large">Predict House Price</button>
+    </form>
+
+   <br>
+   <br>
+   {{ predicted_house_price }}
+
+ </div>
+</body>
+</html>

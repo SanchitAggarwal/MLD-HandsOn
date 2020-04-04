@@ -10,7 +10,6 @@ dataset_path = "../dataset/train.csv"
 selected_variables = ["YearBuilt", "BedroomAbvGr", "KitchenAbvGr", "SalePrice"]
 target_varibale = ["SalePrice"]
 
-
 def data_selection(data, selected_variables):
     # function to select data
     data = data[selected_variables]
@@ -34,6 +33,7 @@ def data_preprocessing(data):
     data["total_rooms"] = data["BedroomAbvGr"] + data["KitchenAbvGr"]      
     return data
 
+
 def feature_extractor(data):
     # function for feature_extractor
     message = "function for feature extractor"
@@ -48,6 +48,7 @@ def feature_extractor(data):
     data = scaler.transform(data)
     data = pd.DataFrame(data)
     return data, label
+
 
 def data_split():
     # function for splitting data into training and testing

@@ -8,9 +8,9 @@ from sklearn.preprocessing import StandardScaler
 from src.feature import data_selection, data_preprocessing, feature_extractor
 
 
-selected_variables = ["YearBuilt", "BedroomAbvGr", "KitchenAbvGr"]
+selected_variables = ["YearBuilt", "BedroomAbvGr", "KitchenAbvGr", "GarageYrBlt", "GarageCars", "GarageArea", "PoolArea"]
 target_varibale = ["SalePrice"]
-model_path = "../output/model_1.pkl"
+model_path = "../output/model_2.pkl"
 dataset_path = "../dataset/test.csv"
 
 def read_model(model_path="../output/model.pkl"):

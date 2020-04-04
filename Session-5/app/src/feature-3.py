@@ -10,7 +10,6 @@ dataset_path = "../dataset/train.csv"
 selected_variables = ["YearBuilt", "BedroomAbvGr", "KitchenAbvGr", "SalePrice"]
 target_varibale = ["SalePrice"]
 
-
 def data_selection(data, selected_variables):
     # function to select data
     data = data[selected_variables]
@@ -27,27 +26,14 @@ def data_validation(data, quantile1=0.25, quantile2=0.75):
     data = data.dropna()
     return data
 
-def data_preprocessing(data):
+def data_preprocessing():
     # function for data pre-processing
     message = "function for data preprocessing"
-    data["no_of_years"] = 2020 - data["YearBuilt"]
-    data["total_rooms"] = data["BedroomAbvGr"] + data["KitchenAbvGr"]      
-    return data
 
-def feature_extractor(data):
+
+def feature_extractor():
     # function for feature_extractor
     message = "function for feature extractor"
-
-    label = data[target_varibale]
-    data = data.drop(target_varibale,axis=1)
-    print(data.shape)
-    print(data.head(5))
-    
-    scaler = StandardScaler()
-    scaler.fit(data)
-    data = scaler.transform(data)
-    data = pd.DataFrame(data)
-    return data, label
 
 def data_split():
     # function for splitting data into training and testing
@@ -64,22 +50,8 @@ if __name__ == '__main__':
     print(data.shape)
     print(data.head(5))
 
+
     # data validation
     data = data_validation(data)
     print(data.shape)
     print(data.head(5))
-
-    # data preprocessing
-    data = data_preprocessing(data)
-    print(data.shape)
-    print(data.head(5))
-
-    # feature extractor
-    data, label = feature_extractor(data)
-    print(data.shape)
-    print(data.head(5))
-    print(label.shape)
-    print(label.head(5))
-
-    data.to_csv("../output/feature.csv", index=False)
-    label.to_csv("../output/label.csv", index=False)

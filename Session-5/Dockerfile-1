@@ -1,0 +1,13 @@
+FROM ubuntu:16.04
+MAINTAINER Sanchit Aggarwal "sanchitagarwal108@gmail.com"
+RUN apt-get update -y && \
+    apt-get install -y python-pip python3.7 && \
+    pip install --upgrade pip setuptools
+WORKDIR /home/house_prediction
+COPY Session-5/requirements.txt requirements.txt
+RUN pip install -r requirements.txt
+RUN pip install gunicorn
+COPY Session-5/app app
+EXPOSE 5000
+ENTRYPOINT [ "python" ]
+CMD [ "app-7.py" ]
