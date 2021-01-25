@@ -5,7 +5,7 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 #define a route
-@app.route('')
+@app.route('/')
 @app.route('/<modelname>')
 def index(modelname):
 	# rendering our simple html template with modelname
